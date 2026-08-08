@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="background-color: chocolate;text-align: center;">
+        <div>
+            <h3>الوزن</h3>
+            <input type="text" id="weight-input">
+        </div>
+        <div>
+            <h3>الطول</h3>
+            <input type="text" id="height-input">
+        </div>
+        <button id="submit-btn">احسب</button>
+        <div>
+            <h4 id="bmi"></h4>
+            <h3 id="bmi-category"></h3>
+
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("submit-btn").addEventListener("click",function(){
+    var weight =document.getElementById("weight-input").value
+    var height=document.getElementById("height-input").value
+    var BMI = weight/(height*height)
+    var bmi_category
+    if(BMI<18){
+        bmi_category ="نحيف"
+    }else if(BMI<24.9){
+        bmi_category = "وزن مثالي"
+    }else if(BMI<29.9){
+        bmi_category = "وزن زائد"
+    }else if(BMI<34.9){
+        bmi_category = "سمنة درجة أولى"
+    }else if(BMI<39.9){
+        bmi_category = "سمنة درجة ثانية"
+    }else{
+        bmi_category = "سمنة خطيرة"
+    }
+    document.getElementById("bmi").innerHTML=(BMI)
+    document.getElementById("bmi-category").innerHTML=(bmi_category)
+    })
+</script>
+</html>
