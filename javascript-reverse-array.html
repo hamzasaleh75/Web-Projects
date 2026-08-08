@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id="number" style="font-size: 50px;text-align: center;"></div>
+    <div id="num"></div>
+</body>
+<script>
+  // function reverse(arr=[20,10,50,60]){
+  //   var firstindex=0
+  //   var finalindex=arr.length-1
+  //     while(firstindex<finalindex){
+  //       var temp=arr[firstindex]
+  //       arr[firstindex]=arr[finalindex]
+  //       arr[finalindex]=temp
+  //       firstindex++
+  //       finalindex--  
+  //     }
+  //   return arr
+  // }
+     function reverseArray(arr=[20,10,50,60]){
+        var outputArray=[]
+            for(element of arr){
+              outputArray.unshift(element)
+            }  
+            return outputArray
+  }
+  var arr=[10,"Hi",true,50,88]
+  var my_arr=[30,40,50,80,88,89,99,100]
+  console.log(reverseArray(arr))
+  console.log(reverseArray())
+
+</script>
+</html>
