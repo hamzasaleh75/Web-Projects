@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF'
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)]
+            }
+            return color
+        }
+        function changeButtonColor(event) {
+            event.preventDefault()  
+            document.getElementById("randomColorButton").style.backgroundColor = getRandomColor()
+        }
+        function setInitialColor() {
+            document.body.style.backgroundColor = "#FFA500"
+        }
+        function changePageColor() {
+            document.body.style.backgroundColor = getRandomColor()
+        }
+        window.onload = function() {
+            setInitialColor()
+        }
+        function startChangingColor() {
+            setInterval(changePageColor, 1300)
+        }
+    </script>
+    <style>
+        .btn-custom {
+            font-size: 2rem;
+            padding: 10px 80px;
+            border-radius: 20px;
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh; margin: 0;">
+
+    <form>
+        <button id="randomColorButton" type="button" class="btn btn-success btn-custom" onclick="startChangingColor()">Start</button>
+    </form>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
